@@ -79,11 +79,11 @@ namespace upserver
         public async Task InsertOrUpdateWord(DictWord child, string startlink)
         {
             var exitword = await _wordsService.GetWordAsync(startlink);
-            var excludedUrls = new HashSet<string>();
-            foreach (var i in exitword.Dict)
-            {
-                if (i.Url == child.Url) { return; }
-            }
+            //var excludedUrls = new HashSet<string>();
+            //foreach (var i in exitword.Dict)
+            //{
+            //    if (i.Url == child.Url) { return; }
+            //}
             if (exitword != null)
             {
                 await updateword(exitword.Id, child);
