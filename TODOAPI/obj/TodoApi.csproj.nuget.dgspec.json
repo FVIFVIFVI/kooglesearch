@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gdkub\\Documents\\GitHub\\m07.team4\\TODOAPI\\TodoApi.csproj": {}
+    "E:\\koogel\\kooglesearch\\TODOAPI\\TodoApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gdkub\\Documents\\GitHub\\m07.team4\\TODOAPI\\TodoApi.csproj": {
+    "E:\\koogel\\kooglesearch\\TODOAPI\\TodoApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gdkub\\Documents\\GitHub\\m07.team4\\TODOAPI\\TodoApi.csproj",
+        "projectUniqueName": "E:\\koogel\\kooglesearch\\TODOAPI\\TodoApi.csproj",
         "projectName": "TodoApi",
-        "projectPath": "C:\\Users\\gdkub\\Documents\\GitHub\\m07.team4\\TODOAPI\\TodoApi.csproj",
+        "projectPath": "E:\\koogel\\kooglesearch\\TODOAPI\\TodoApi.csproj",
         "packagesPath": "C:\\Users\\gdkub\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gdkub\\Documents\\GitHub\\m07.team4\\TODOAPI\\obj\\",
+        "outputPath": "E:\\koogel\\kooglesearch\\TODOAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\gdkub\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -5,17 +5,17 @@ const SearchWord = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [serverResponse, setServerResponse] = useState([]);
 
-    const handleInputChange = async (event) => {
+    const handleInputChange = (event) => {
         const inputValue = event.target.value;
         setSearchTerm(inputValue);
+    };
 
-        // Make a GET request to the server to check if the word exists
+    const apisearch = async () => {
         try {
-            const response = await fetch(`http://localhost:5015/Words/${inputValue}`);
+            const response = await fetch(`http://localhost:5015/Words/${searchTerm}`);
             const data = await response.json();
             console.log(data);
             setServerResponse(data);
-
         } catch (error) {
             console.error('Error checking word existence:', error);
             setServerResponse(['Error checking word existence']);
@@ -42,7 +42,7 @@ const SearchWord = () => {
                         value={searchTerm}
                         onChange={handleInputChange}
                     />
-                    <Styles.SearchButton>
+                    <Styles.SearchButton onClick={apisearch}>
                         <Styles.SearchIcon src='/mingcute_search-fill.svg'/>
                     </Styles.SearchButton>
                 </Styles.InputAndButtonWarper>

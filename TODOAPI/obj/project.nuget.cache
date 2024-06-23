@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Em0yK6+CDgc=",
+  "dgSpecHash": "o9vdQKDKedk=",
   "success": true,
-  "projectFilePath": "C:\\Users\\gdkub\\Documents\\GitHub\\m07.team4\\TODOAPI\\TodoApi.csproj",
+  "projectFilePath": "E:\\koogel\\kooglesearch\\TODOAPI\\TodoApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gdkub\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\gdkub\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",

@@ -21,8 +21,11 @@ namespace WordsApi.Services
         public async Task<List<Words>> GetAsync() =>
             await _wordsCollection.Find(_ => true).ToListAsync();
 
-        public async Task<Words?> GetAsync(string id) =>
-            await _wordsCollection.Find(x => x.Name == id).FirstOrDefaultAsync();
+        public async Task<Words?> GetAsync(string id)
+        {
+            Console.WriteLine(id);
+            return await _wordsCollection.Find(x => x.Name == id).FirstOrDefaultAsync();
+        }
 
         public async Task CreateAsync(Words newWords) =>
             await _wordsCollection.InsertOneAsync(newWords);
