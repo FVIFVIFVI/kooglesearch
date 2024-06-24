@@ -7,7 +7,7 @@ using KoogleDatabaseSettingsApi.Models;
 using Microsoft.Extensions.Options;
 using urlsApi.Models;
 using wordsApi.Models;
-
+using ignore.Models;
 namespace CrawlerManager;
 
 class Crawler
@@ -19,7 +19,7 @@ class Crawler
     private ParserUrl PUrl;
     private Upserver Up;
     private ParserWords PWord;
-
+    private Ignore ignore;
     public Crawler(IOptions<KoogleDatabaseSettings> databaseSettings)
     {
         links = new();
@@ -29,6 +29,7 @@ class Crawler
         PUrl = new();
         Up = new(databaseSettings);
         PWord = new();
+        ignore = new();
     }
 
     public async void crawler(string Url)
@@ -46,7 +47,8 @@ class Crawler
         int errors = 0;
         int visit = 0;
         int lin = 0;
-
+        var ignore1= await Up.Ignore_get();
+        foreach (var item in ignore1) { visitedLinks.Add(item); }
         while (links.Count > 0)
         {
             ++count;

@@ -10,6 +10,8 @@ using Microsoft.Extensions.Options;
 using KoogleDatabaseSettingsApi.Models;
 using wordsApi.Models;
 using MongoDB.Driver;
+using ignore.Models;
+using ignore.Services;
 
 namespace upserver
 {
@@ -18,12 +20,53 @@ namespace upserver
         private BaseUrlService _baseUrlService;
         private UrlsService _urlsService;
         private WordsService _wordsService;
+        private IgnoreService _ignoreService;
 
         public Upserver(IOptions<KoogleDatabaseSettings> databaseSettings)
         {
             _baseUrlService = new BaseUrlService(databaseSettings);
             _urlsService = new UrlsService(databaseSettings);
             _wordsService = new WordsService(databaseSettings);
+            _ignoreService = new IgnoreService(databaseSettings);
+        }
+
+        public async Task<HashSet<string>> Ignore_get()
+        {
+            try
+            {
+                var ignoreList = await _ignoreService.GetAsync();
+                var combinedHashSet = new HashSet<string>();
+
+                foreach (var ignore in ignoreList)
+                {
+                    combinedHashSet.UnionWith(ignore.HashSet);
+                }
+
+                return combinedHashSet;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Failed to retrieve Ignore documents. Error: " + ex.Message);
+                return new HashSet<string>();
+            }
+        }
+
+        public async Task InsertIgnore(HashSet<string> hashSet)
+        {
+            var newIgnore = new Ignore
+            {
+                HashSet = hashSet
+            };
+
+            try
+            {
+                await _ignoreService.CreateAsync(newIgnore);
+                Console.WriteLine("InsertIgnore succeeded.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("InsertIgnore failed. Error: " + ex.Message);
+            }
         }
 
         public async Task InsertUrl(List<DictUrl> child, string startlink, Dictionary<string, int> father1)
