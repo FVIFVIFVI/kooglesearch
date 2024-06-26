@@ -12,6 +12,7 @@ using wordsApi.Models;
 using MongoDB.Driver;
 using ignore.Models;
 using ignore.Services;
+using System.Security.Cryptography.X509Certificates;
 
 namespace upserver
 {
@@ -21,6 +22,7 @@ namespace upserver
         private UrlsService _urlsService;
         private WordsService _wordsService;
         private IgnoreService _ignoreService;
+        public List<Ignore> IgnoreList { get; private set; }
 
         public Upserver(IOptions<KoogleDatabaseSettings> databaseSettings)
         {
@@ -28,18 +30,26 @@ namespace upserver
             _urlsService = new UrlsService(databaseSettings);
             _wordsService = new WordsService(databaseSettings);
             _ignoreService = new IgnoreService(databaseSettings);
+            InitializeAsync().GetAwaiter().GetResult();
         }
 
-        public async Task<HashSet<string>> Ignore_get()
+    private async Task InitializeAsync()
+    {
+        IgnoreList = await _ignoreService.GetAsync();
+    }
+    public HashSet<string> Ignore_get()
         {
             try
             {
-                var ignoreList = await _ignoreService.GetAsync();
+                var ignoreList = IgnoreList;
                 var combinedHashSet = new HashSet<string>();
 
-                foreach (var ignore in ignoreList)
+                foreach (var ignore1 in ignoreList)
                 {
-                    combinedHashSet.UnionWith(ignore.HashSet);
+                    foreach (var ignore2 in ignore1.visited)
+                    {
+                        combinedHashSet.Add(ignore2);
+                    }
                 }
 
                 return combinedHashSet;
@@ -51,16 +61,22 @@ namespace upserver
             }
         }
 
-        public async Task InsertIgnore(HashSet<string> hashSet)
+        public async Task InsertIgnore(string urlvisit)
         {
-            var newIgnore = new Ignore
-            {
-                HashSet = hashSet
-            };
-
             try
             {
-                await _ignoreService.CreateAsync(newIgnore);
+                if (IgnoreList == null || IgnoreList.Count == 0)
+                {
+                    var newIgnore = new Ignore();
+                    newIgnore.visited.Add(urlvisit);
+                    await _ignoreService.CreateAsync(newIgnore);
+                    IgnoreList = await _ignoreService.GetAsync(); // עדכון הרשימה לאחר ההוספה
+                }
+                else
+                {
+                    await _ignoreService.AppendToVisitedAsync(IgnoreList[0].Id, urlvisit);
+                }
+
                 Console.WriteLine("InsertIgnore succeeded.");
             }
             catch (Exception ex)
@@ -84,29 +100,25 @@ namespace upserver
                 await _urlsService.CreateAsync(newUrls);
                 Console.WriteLine("InsertUrl succeeded for: " + startlink); //
             }
-            catch (Exception ex) // 
+            catch (Exception ex)
             {
-                Console.WriteLine("InsertUrl failed for: " + startlink + ". Error: " + ex.Message); // Failure message
+                Console.WriteLine("InsertUrl failed for: " + startlink + ". Error: " + ex.Message);
             }
         }
 
-
-
         public async Task upfutherUrl(string id, string link1)
         {
-            //Console.WriteLine(id);
             var tempdict = new Dictionary<string, int>();
-
             var hash = await _urlsService.GeturlAsync(id);
             Console.WriteLine(8888);
 
-            if (1==1){
+            if (true)
+            {
                 Console.WriteLine("dsds66666666d");
                 tempdict = hash.Father;
-                tempdict[link1]=1;
-            await _urlsService.UpdateFieldAsync(id,"Father",tempdict);
-           }
-
+                tempdict[link1] = 1;
+                await _urlsService.UpdateFieldAsync(id, "Father", tempdict);
+            }
         }
 
         public async Task<List<BaseUrl>> GetBaseUrls()
@@ -122,11 +134,7 @@ namespace upserver
         public async Task InsertOrUpdateWord(DictWord child, string startlink)
         {
             var exitword = await _wordsService.GetWordAsync(startlink);
-            //var excludedUrls = new HashSet<string>();
-            //foreach (var i in exitword.Dict)
-            //{
-            //    if (i.Url == child.Url) { return; }
-            //}
+
             if (exitword != null)
             {
                 await updateword(exitword.Id, child);
@@ -143,7 +151,6 @@ namespace upserver
             }
         }
 
-
         public async Task InsertWord(DictWord child, string startlink)
         {
             var word = new Words
@@ -155,14 +162,11 @@ namespace upserver
             await _wordsService.CreateAsync(word);
         }
 
-
-
         public async Task<bool> UrlExistsAsync(string url)
         {
             var urlRecord = await _urlsService.GeturlAsync(url);
             return urlRecord != null;
         }
-
 
         public async Task updateword(string id, DictWord newDictItem)
         {
@@ -184,10 +188,23 @@ namespace upserver
             }
         }
 
-
         public async Task<List<BaseUrl>> GetBaseUrl()
         {
             return await _baseUrlService.GetAsync();
+        }
+
+        public async Task UpdateAsync1(string url)
+        {
+            Console.WriteLine("UpdateAsync1");
+            var baseUrl = await _baseUrlService.GetAsync();
+            var new_baseurl = new BaseUrl
+            {
+                Name = baseUrl[0].Name,
+                Id = baseUrl[0].Id,
+                Time = baseUrl[0].Time,
+                Url = url
+            };
+            await _baseUrlService.UpdateAsync(url, new_baseurl);
         }
     }
 }

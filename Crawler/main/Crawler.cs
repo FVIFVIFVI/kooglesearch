@@ -47,7 +47,8 @@ class Crawler
         int errors = 0;
         int visit = 0;
         int lin = 0;
-        var ignore1= await Up.Ignore_get();
+        Console.WriteLine("urueu");
+        var ignore1=  Up.Ignore_get();
         foreach (var item in ignore1) { visitedLinks.Add(item); }
         while (links.Count > 0)
         {
@@ -83,9 +84,15 @@ class Crawler
                     ++errors;
                 }
                 visitedLinks.Add(link);
+                await Up.InsertIgnore(link);
+                Up.UpdateAsync1(links.Peek());
+
+
             }
             else
-            {
+            {   Console.WriteLine(links.Peek());
+                links.Dequeue();
+                Console.WriteLine("y7yughjvjfytt6itgugvyg");
                 visit++;
             }
         }

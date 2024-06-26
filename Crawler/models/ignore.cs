@@ -11,7 +11,7 @@ namespace ignore.Models
 
        
 
-        [BsonElement("HashSet")]
-        public HashSet<string> HashSet { get; set; } = new HashSet<string>();
+        [BsonElement("list_visit_html")]
+        public List<string> visited { get; set; } = new List<string>();
     }
 }

@@ -1,7 +1,6 @@
 ﻿using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 using ignore.Models;
-using MongoDB.Bson;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using KoogleDatabaseSettingsApi.Models;
@@ -33,5 +32,12 @@ namespace ignore.Services
 
         public async Task RemoveAsync(string id) =>
             await _ignoreCollection.DeleteOneAsync(x => x.Id == id);
+
+        public async Task AppendToVisitedAsync(string id, string newItem)
+        {
+            var filter = Builders<Ignore>.Filter.Eq(x => x.Id, id);
+            var update = Builders<Ignore>.Update.Push(x => x.visited, newItem);
+            await _ignoreCollection.UpdateOneAsync(filter, update);
+        }
     }
 }

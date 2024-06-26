@@ -36,7 +36,7 @@ namespace playCrawler
             //var baseUrlList = await Up.GetBaseUrl();
             Random rand = new Random();
             int rand1 = rand.Next(1, 1000);
-            string url = "https://harrypotter.fandom.com/wiki/Harry_Potter:_Hogwarts_Mystery";
+            string url = "https://harrypotter.fandom.com/wiki/Harry_Potter_and_the_Goblet_of_Fire";
             int it = 0;
             foreach (var indexer in baseUrl)
             {
