@@ -195,16 +195,27 @@ namespace upserver
 
         public async Task UpdateAsync1(string url)
         {
-            Console.WriteLine("UpdateAsync1");
-            var baseUrl = await _baseUrlService.GetAsync();
-            var new_baseurl = new BaseUrl
+            try
             {
-                Name = baseUrl[0].Name,
-                Id = baseUrl[0].Id,
-                Time = baseUrl[0].Time,
-                Url = url
-            };
-            await _baseUrlService.UpdateAsync(url, new_baseurl);
+                Console.WriteLine("UpdateAsync1");
+                var baseUrl = await _baseUrlService.GetAsync();
+                Console.WriteLine($"{baseUrl[0].Id}");  
+                var new_baseurl = new BaseUrl
+                {
+                    Id = baseUrl[0].Id,
+                    Name = baseUrl[0].Name,
+                    Time = baseUrl[0].Time,
+                    Url = url
+                };
+                await _baseUrlService.UpdateAsync(baseUrl[0].Id, new_baseurl);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+                // Handle the exception or rethrow to let a higher-level handler deal with it
+                throw;
+            }
         }
+
     }
 }

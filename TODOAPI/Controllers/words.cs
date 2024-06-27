@@ -90,7 +90,7 @@ namespace WordsApi.Controllers
                 stringList.Add(new Tuple<string, int>(word1, urlsData[word1] / name1));
             }
 
-            var sortedList = stringList.OrderByDescending(tuple => tuple.Item2).ToList();
+            var sortedList = stringList.OrderByDescending(tuple => tuple.Item2).Take(10).ToList();
 
             return sortedList;
         }

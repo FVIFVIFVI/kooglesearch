@@ -1894,11 +1894,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gdkub\\OneDrive\\שולחן העבודה\\‏‏תיקיה חדשה\\kooglesearch\\Crawler\\TodoApi.csproj",
+      "projectUniqueName": "E:\\koogel\\kooglesearch\\Crawler\\TodoApi.csproj",
       "projectName": "TodoApi",
-      "projectPath": "C:\\Users\\gdkub\\OneDrive\\שולחן העבודה\\‏‏תיקיה חדשה\\kooglesearch\\Crawler\\TodoApi.csproj",
+      "projectPath": "E:\\koogel\\kooglesearch\\Crawler\\TodoApi.csproj",
       "packagesPath": "C:\\Users\\gdkub\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gdkub\\OneDrive\\שולחן העבודה\\‏‏תיקיה חדשה\\kooglesearch\\Crawler\\obj\\",
+      "outputPath": "E:\\koogel\\kooglesearch\\Crawler\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\gdkub\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1909,6 +1909,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1921,6 +1922,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -1967,7 +1973,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.106/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

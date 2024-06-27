@@ -3,6 +3,26 @@
   "WorkspaceRootPath": "E:\\koogel\\kooglesearch\\TODOAPI\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{6BEE2FA5-55D2-4240-AD09-724E284ACE4E}|TodoApi.csproj|e:\\koogel\\kooglesearch\\todoapi\\controllers\\words.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BEE2FA5-55D2-4240-AD09-724E284ACE4E}|TodoApi.csproj|solutionrelative:controllers\\words.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BEE2FA5-55D2-4240-AD09-724E284ACE4E}|TodoApi.csproj|e:\\koogel\\kooglesearch\\todoapi\\controllers\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BEE2FA5-55D2-4240-AD09-724E284ACE4E}|TodoApi.csproj|solutionrelative:controllers\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BEE2FA5-55D2-4240-AD09-724E284ACE4E}|TodoApi.csproj|e:\\koogel\\kooglesearch\\todoapi\\servises\\baseurlservise.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BEE2FA5-55D2-4240-AD09-724E284ACE4E}|TodoApi.csproj|solutionrelative:servises\\baseurlservise.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BEE2FA5-55D2-4240-AD09-724E284ACE4E}|TodoApi.csproj|e:\\koogel\\kooglesearch\\todoapi\\models\\baseurl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BEE2FA5-55D2-4240-AD09-724E284ACE4E}|TodoApi.csproj|solutionrelative:models\\baseurl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BEE2FA5-55D2-4240-AD09-724E284ACE4E}|TodoApi.csproj|e:\\koogel\\kooglesearch\\todoapi\\models\\words.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BEE2FA5-55D2-4240-AD09-724E284ACE4E}|TodoApi.csproj|solutionrelative:models\\words.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6BEE2FA5-55D2-4240-AD09-724E284ACE4E}|TodoApi.csproj|e:\\koogel\\kooglesearch\\todoapi\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6BEE2FA5-55D2-4240-AD09-724E284ACE4E}|TodoApi.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -15,24 +35,12 @@
       "RelativeMoniker": "D:0:0:{6BEE2FA5-55D2-4240-AD09-724E284ACE4E}|TodoApi.csproj|solutionrelative:servises\\wordsservise.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BEE2FA5-55D2-4240-AD09-724E284ACE4E}|TodoApi.csproj|e:\\koogel\\kooglesearch\\todoapi\\controllers\\words.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6BEE2FA5-55D2-4240-AD09-724E284ACE4E}|TodoApi.csproj|solutionrelative:controllers\\words.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6BEE2FA5-55D2-4240-AD09-724E284ACE4E}|TodoApi.csproj|e:\\koogel\\kooglesearch\\todoapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6BEE2FA5-55D2-4240-AD09-724E284ACE4E}|TodoApi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BEE2FA5-55D2-4240-AD09-724E284ACE4E}|TodoApi.csproj|e:\\koogel\\kooglesearch\\todoapi\\models\\words.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6BEE2FA5-55D2-4240-AD09-724E284ACE4E}|TodoApi.csproj|solutionrelative:models\\words.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6BEE2FA5-55D2-4240-AD09-724E284ACE4E}|TodoApi.csproj|e:\\koogel\\kooglesearch\\todoapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{6BEE2FA5-55D2-4240-AD09-724E284ACE4E}|TodoApi.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6BEE2FA5-55D2-4240-AD09-724E284ACE4E}|TodoApi.csproj|e:\\koogel\\kooglesearch\\todoapi\\controllers\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6BEE2FA5-55D2-4240-AD09-724E284ACE4E}|TodoApi.csproj|solutionrelative:controllers\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6BEE2FA5-55D2-4240-AD09-724E284ACE4E}|TodoApi.csproj|e:\\koogel\\kooglesearch\\todoapi\\models\\koogledatabasesettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -41,14 +49,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{6BEE2FA5-55D2-4240-AD09-724E284ACE4E}|TodoApi.csproj|e:\\koogel\\kooglesearch\\todoapi\\models\\urls.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6BEE2FA5-55D2-4240-AD09-724E284ACE4E}|TodoApi.csproj|solutionrelative:models\\urls.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6BEE2FA5-55D2-4240-AD09-724E284ACE4E}|TodoApi.csproj|e:\\koogel\\kooglesearch\\todoapi\\models\\baseurl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6BEE2FA5-55D2-4240-AD09-724E284ACE4E}|TodoApi.csproj|solutionrelative:models\\baseurl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6BEE2FA5-55D2-4240-AD09-724E284ACE4E}|TodoApi.csproj|e:\\koogel\\kooglesearch\\todoapi\\servises\\baseurlservise.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6BEE2FA5-55D2-4240-AD09-724E284ACE4E}|TodoApi.csproj|solutionrelative:servises\\baseurlservise.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6BEE2FA5-55D2-4240-AD09-724E284ACE4E}|TodoApi.csproj|e:\\koogel\\kooglesearch\\todoapi\\servises\\spamservise.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -90,24 +90,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "HomeController.cs",
               "DocumentMoniker": "E:\\koogel\\kooglesearch\\TODOAPI\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
               "ToolTip": "E:\\koogel\\kooglesearch\\TODOAPI\\Controllers\\HomeController.cs",
               "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAQwDQAAAAAAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAqwDQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-23T20:47:06.946Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "words.cs",
               "DocumentMoniker": "E:\\koogel\\kooglesearch\\TODOAPI\\models\\words.cs",
               "RelativeDocumentMoniker": "models\\words.cs",
@@ -120,7 +120,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 3,
               "Title": "baseurl.cs",
               "DocumentMoniker": "E:\\koogel\\kooglesearch\\TODOAPI\\models\\baseurl.cs",
               "RelativeDocumentMoniker": "models\\baseurl.cs",
@@ -133,7 +133,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 2,
               "Title": "baseurlservise.cs",
               "DocumentMoniker": "E:\\koogel\\kooglesearch\\TODOAPI\\servises\\baseurlservise.cs",
               "RelativeDocumentMoniker": "servises\\baseurlservise.cs",
@@ -146,7 +146,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "wordsservise.cs",
               "DocumentMoniker": "E:\\koogel\\kooglesearch\\TODOAPI\\servises\\wordsservise.cs",
               "RelativeDocumentMoniker": "servises\\wordsservise.cs",
@@ -154,12 +154,11 @@
               "RelativeToolTip": "servises\\wordsservise.cs",
               "ViewState": "AQIAACIAAAAAAAAAAAAwwD8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T18:20:14.198Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-20T18:20:14.198Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "urls.cs",
               "DocumentMoniker": "E:\\koogel\\kooglesearch\\TODOAPI\\models\\urls.cs",
               "RelativeDocumentMoniker": "models\\urls.cs",
@@ -167,12 +166,11 @@
               "RelativeToolTip": "models\\urls.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-23T18:42:01.625Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-23T18:42:01.625Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "KoogleDatabaseSettings.cs",
               "DocumentMoniker": "E:\\koogel\\kooglesearch\\TODOAPI\\models\\KoogleDatabaseSettings.cs",
               "RelativeDocumentMoniker": "models\\KoogleDatabaseSettings.cs",
@@ -180,38 +178,37 @@
               "RelativeToolTip": "models\\KoogleDatabaseSettings.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-23T18:42:00.361Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-23T18:42:00.361Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "words.cs",
               "DocumentMoniker": "E:\\koogel\\kooglesearch\\TODOAPI\\Controllers\\words.cs",
               "RelativeDocumentMoniker": "Controllers\\words.cs",
               "ToolTip": "E:\\koogel\\kooglesearch\\TODOAPI\\Controllers\\words.cs",
               "RelativeToolTip": "Controllers\\words.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAA8AAAAIAAAA",
+              "ViewState": "AQIAACMAAAAAAAAAAAApwCUAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-20T17:37:02.681Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "users.cs",
               "DocumentMoniker": "E:\\koogel\\kooglesearch\\TODOAPI\\Controllers\\users.cs",
               "RelativeDocumentMoniker": "Controllers\\users.cs",
               "ToolTip": "E:\\koogel\\kooglesearch\\TODOAPI\\Controllers\\users.cs",
               "RelativeToolTip": "Controllers\\users.cs",
-              "ViewState": "AQIAADwAAAAAAAAAAAA4wAAAAAAAAAAA",
+              "ViewState": "AQIAACAAAAAAAAAAAAAwwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-23T18:42:06.405Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "appsettings.json",
               "DocumentMoniker": "E:\\koogel\\kooglesearch\\TODOAPI\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -219,12 +216,11 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-06-23T18:41:44.37Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-23T18:41:44.37Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\koogel\\kooglesearch\\TODOAPI\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -232,12 +228,11 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AQIAAAkAAAAAAAAAAAAAACcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T17:26:40.478Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-20T17:26:40.478Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "urls.cs",
               "DocumentMoniker": "E:\\koogel\\kooglesearch\\TODOAPI\\Controllers\\urls.cs",
               "RelativeDocumentMoniker": "Controllers\\urls.cs",
@@ -245,8 +240,7 @@
               "RelativeToolTip": "Controllers\\urls.cs",
               "ViewState": "AQIAACEAAAAAAAAAAAAwwCsAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-23T18:42:08.091Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-23T18:42:08.091Z"
             },
             {
               "$type": "Document",
@@ -258,8 +252,7 @@
               "RelativeToolTip": "servises\\spamservise.cs",
               "ViewState": "AQIAABcAAAAAAAAAAAA9wAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-23T18:41:52.506Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-23T18:41:52.506Z"
             },
             {
               "$type": "Document",
@@ -271,8 +264,7 @@
               "RelativeToolTip": "models\\spam.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-23T18:42:46.295Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-23T18:42:46.295Z"
             },
             {
               "$type": "Document",
@@ -284,8 +276,7 @@
               "RelativeToolTip": "models\\users.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-23T18:43:09.576Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-23T18:43:09.576Z"
             },
             {
               "$type": "Document",
@@ -297,8 +288,7 @@
               "RelativeToolTip": "servises\\urlsservise.cs",
               "ViewState": "AQIAAB0AAAAAAAAAAAAIwCQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-23T18:41:50.671Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-23T18:41:50.671Z"
             },
             {
               "$type": "Document",
@@ -310,8 +300,7 @@
               "RelativeToolTip": "servises\\usersservise.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-23T18:41:46.36Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-23T18:41:46.36Z"
             },
             {
               "$type": "Document",
@@ -323,8 +312,7 @@
               "RelativeToolTip": "Controllers\\baseurl.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-23T18:45:29.468Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-23T18:45:29.468Z"
             },
             {
               "$type": "Document",
@@ -336,8 +324,7 @@
               "RelativeToolTip": "Controllers\\spam.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-23T18:42:09.434Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-23T18:42:09.434Z"
             },
             {
               "$type": "Document",
@@ -348,8 +335,7 @@
               "ToolTip": "E:\\koogel\\kooglesearch\\TODOAPI\\TodoApi.csproj",
               "RelativeToolTip": "TodoApi.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-06-23T18:42:38.376Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-23T18:42:38.376Z"
             }
           ]
         }

@@ -42,7 +42,7 @@ class Crawler
         //{
         //    indata.Add(urlData.Name);
         //}
-
+        await Up.UpdateAsync1(Url);
         int count = 0;
         int errors = 0;
         int visit = 0;
