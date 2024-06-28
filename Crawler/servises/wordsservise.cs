@@ -36,7 +36,8 @@ namespace WordsApi.Services
         public async Task UpdateOneAsync(FilterDefinition<Words> filter, UpdateDefinition<Words> update) =>
             await _wordsCollection.UpdateOneAsync(filter, update);
 
-        public async Task RemoveAsync(string id) =>
-            await _wordsCollection.DeleteOneAsync(x => x.Id == id);
+        public async Task RemoveAsync(string id) {
+            Console.WriteLine("RemoveAsync");
+            await _wordsCollection.DeleteOneAsync(x => x.Id == id);}
     }
 }

@@ -33,13 +33,11 @@ namespace pageRank
     {
         foreach (var child in fathers.Children)
         {
-            // בדיקה אם המפתח child.Url קיים במילון, אם לא - הוספתו
             if (!father1.ContainsKey(child.Url))
             {
-                father1[child.Url] = new Dictionary<string, int>(); // או השמה של מילון חדש אם יש צורך בערכים ספציפיים
+                father1[child.Url] = new Dictionary<string, int>(); 
             }
 
-            // עכשיו זה בטוח להניח שהמפתח קיים, אז אפשר להכניס ערך למילון הפנימי
             father1[child.Url][fathers.Name] = 1;
             Console.WriteLine(child.Url);
         }

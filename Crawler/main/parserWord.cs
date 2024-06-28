@@ -64,9 +64,7 @@ namespace parserWords
 
                 ChromeOptions options = new ChromeOptions();
                 options.AddArgument("--headless"); // Run Chrome in headless mode
-                options.AddArgument("--ignore-certificate-errors");
-                options.AddArgument("--disable-gpu"); // Disable GPU rendering
-                options.AddArgument("--disable-software-rasterizer"); // Disable software rasterizer
+              
                 driver = new ChromeDriver(options);
 
                 if (driver == null)

@@ -9,5 +9,7 @@ namespace KoogleDatabaseSettingsApi.Models
         public string UrlsCollectionName { get; set; } = null!;
         public string UsesrCollectionName { get; set; } = null!;
         public string WordsCollectionName { get; set; } = null!;
+        public string IgnoreCollectionName { get; set; } = null!;
+
     }
 }
