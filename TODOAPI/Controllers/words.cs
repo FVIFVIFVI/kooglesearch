@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
+using System.Xml.Linq;
 
 namespace WordsApi.Controllers
 {
@@ -21,82 +22,92 @@ namespace WordsApi.Controllers
         [HttpGet("{name}")]
         public async Task<List<Tuple<string, int>>> Get(string name)
         {
-            //Console.WriteLine($"{name}");
             var urlsData = new Dictionary<string, int>();
-            var url1 = new Dictionary<string, int>();
-            
+            var allwords = new Dictionary<string, int>();
+            var omit = new HashSet<string>();
             List<Tuple<string, int>> stringList = new List<Tuple<string, int>>();
-           // Console.WriteLine(8883);
             var listwords = name.Split(new[] { '\r', '\n', ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            int name1 = listwords.Length;
 
-            //Console.WriteLine(8885);
-            
-            foreach (var i1 in listwords)
+            foreach (var word in listwords)
             {
-                //Console.WriteLine(88857);
-                //Console.WriteLine(i1);
                 var excludedUrls = new HashSet<string>();
-                var words = await _wordsService.GetAsync(i1);
-                if (words == null || words.Dict == null)
+
+                var tempword = word;
+                var list_pointer = new List<HashSet<string>>();
+                list_pointer.Add(null);
+                list_pointer[0] = excludedUrls;
+                Console.WriteLine(name1);
+                if (word.StartsWith("-"))
                 {
-                    //Console.WriteLine($"No data found for {i1}");
+                    tempword = word.Substring(1);
+                    list_pointer[0] = omit;
+                    name1= name1-1;
+                    Console.WriteLine(name1);
+
+                }
+                
+                var words = await _wordsService.GetAsync(tempword);
+                
+                    if (words == null || words.Dict == null)
+                {
                     continue;
                 }
-                //Console.WriteLine("56565656");
 
                 foreach (var result in words.Dict)
                 {
-                    Console.WriteLine(result.Url + "9");
-                    if (excludedUrls.Contains(result.Url))
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        excludedUrls.Add(result.Url);
-                    }
+                    
 
-                    //Console.WriteLine(12);
-                    if (!url1.ContainsKey(result.Url))
+                    //if (word.StartsWith("-"))
+                    //{
+                    //    omit.Add(result.Url);
+                    //    tempword = word.Substring(1);
+                    //    continue;
+                    //}
+
+                    if (excludedUrls.Contains(result.Url) ) continue;
+                    list_pointer[0].Add(result.Url);
+                    if (list_pointer[0] == omit) continue;
+                    excludedUrls.Add(result.Url);
+                    if (!allwords.ContainsKey(result.Url))
                     {
-                        url1[result.Url] = 0;
+                        allwords[result.Url] = 0;
                         urlsData[result.Url] = 0;
                     }
-                    url1[result.Url]++;
+                    allwords[result.Url]++;
                     urlsData[result.Url] += result.Count;
                 }
             }
-            Console.WriteLine("343434444");
 
-            foreach (var url in url1.Keys.ToList())
+            foreach (var url in allwords.Keys.ToList())
             {
-                Console.WriteLine(232);
-                Console.WriteLine(url);
-                Console.WriteLine(url1[url]);
-                Console.WriteLine(listwords.Length);
-                if (url1[url] < listwords.Length)
+                if (allwords[url] < name1)
                 {
-                    url1.Remove(url);
-                    //urlsData.Remove(url);
+                    Console.WriteLine(allwords[url]+ $"{ listwords.Length}");
+                    allwords.Remove(url);
                 }
             }
-
-            Console.WriteLine(name, "ggggggggg");
-
-            int name1 = listwords.Length;
-
-            foreach (var word1 in url1.Keys)
+            foreach(var i in omit)
             {
-                stringList.Add(new Tuple<string, int>(word1, urlsData[word1] / name1));
+               Console.WriteLine(i);
+                urlsData[i] = 0;
             }
 
-            var sortedList = stringList.OrderByDescending(tuple => tuple.Item2).Take(10).ToList();
+            //foreach (var url in urlsData.Keys.ToList()) { Console.WriteLine(urlsData[url]); }
 
+            foreach (var word1 in allwords.Keys)
+            {
+                stringList.Add(new Tuple<string, int>(word1, urlsData[word1] / name1));
+                Console.WriteLine(word1+","+ urlsData[word1]+"+"+ name1);
+            }
+            Console.WriteLine("kldp0000");
+            var sortedList = stringList.OrderByDescending(tuple => tuple.Item2).Take(10).ToList();
             return sortedList;
         }
 
 
 
+       
 
         [HttpPost]
         public async Task<IActionResult> Post(Words newWords)
