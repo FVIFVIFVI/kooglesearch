@@ -13,10 +13,11 @@ using MongoDB.Driver;
 using ignore.Models;
 using ignore.Services;
 using System.Security.Cryptography.X509Certificates;
+using Amazon.Runtime.Internal.Endpoints.StandardLibrary;
 
 namespace upserver
 {
-    class Upserver
+    public class Upserver
     {
         private BaseUrlService _baseUrlService;
         private UrlsService _urlsService;
@@ -121,6 +122,16 @@ namespace upserver
             }
         }
 
+
+        public async Task upfutherUrl1(Dictionary<string,int> tempdict,string id)
+        {
+          
+
+           
+                await _urlsService.UpdateFieldAsync(id, "Father", tempdict);
+            
+        }
+
         public async Task<List<BaseUrl>> GetBaseUrls()
         {
             return await _baseUrlService.GetAsync();
@@ -174,6 +185,13 @@ namespace upserver
             var update = Builders<Words>.Update.Push(x => x.Dict, newDictItem);
             await _wordsService.UpdateOneAsync(filter, update);
         }
+
+
+        public async Task<List<Urls>> getallurl()
+        {
+           return await _urlsService.GetAsync();
+        }
+
 
         public async Task DeleteUrlsWhereFatherIsNullAsync()
         {

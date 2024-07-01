@@ -8,10 +8,12 @@ using Microsoft.Extensions.Options;
 using urlsApi.Models;
 using wordsApi.Models;
 using ignore.Models;
+using pageRank;
 namespace CrawlerManager;
 
 class Crawler
 {
+    private PageRank pageRank1;
     private Queue<string> links;
     private HashSet<string> visitedLinks;
     private HashSet<string> indata;
@@ -30,6 +32,8 @@ class Crawler
         Up = new(databaseSettings);
         PWord = new();
         ignore = new();
+        pageRank1 = new(databaseSettings);
+
     }
 
     public async void crawler(string Url)
