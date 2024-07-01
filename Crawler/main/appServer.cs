@@ -10,20 +10,80 @@ using Microsoft.Extensions.Options;
 using KoogleDatabaseSettingsApi.Models;
 using wordsApi.Models;
 using MongoDB.Driver;
+using ignore.Models;
+using ignore.Services;
+using System.Security.Cryptography.X509Certificates;
+using Amazon.Runtime.Internal.Endpoints.StandardLibrary;
 
 namespace upserver
 {
-    class Upserver
+    public class Upserver
     {
         private BaseUrlService _baseUrlService;
         private UrlsService _urlsService;
         private WordsService _wordsService;
+        private IgnoreService _ignoreService;
+        public List<Ignore> IgnoreList { get; private set; }
 
         public Upserver(IOptions<KoogleDatabaseSettings> databaseSettings)
         {
             _baseUrlService = new BaseUrlService(databaseSettings);
             _urlsService = new UrlsService(databaseSettings);
             _wordsService = new WordsService(databaseSettings);
+            _ignoreService = new IgnoreService(databaseSettings);
+            InitializeAsync().GetAwaiter().GetResult();
+        }
+
+    private async Task InitializeAsync()
+    {
+        IgnoreList = await _ignoreService.GetAsync();
+    }
+    public HashSet<string> Ignore_get()
+        {
+            try
+            {
+                var ignoreList = IgnoreList;
+                var combinedHashSet = new HashSet<string>();
+
+                foreach (var ignore1 in ignoreList)
+                {
+                    foreach (var ignore2 in ignore1.visited)
+                    {
+                        combinedHashSet.Add(ignore2);
+                    }
+                }
+
+                return combinedHashSet;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Failed to retrieve Ignore documents. Error: " + ex.Message);
+                return new HashSet<string>();
+            }
+        }
+
+        public async Task InsertIgnore(string urlvisit)
+        {
+            try
+            {
+                if (IgnoreList == null || IgnoreList.Count == 0)
+                {
+                    var newIgnore = new Ignore();
+                    newIgnore.visited.Add(urlvisit);
+                    await _ignoreService.CreateAsync(newIgnore);
+                    IgnoreList = await _ignoreService.GetAsync(); // עדכון הרשימה לאחר ההוספה
+                }
+                else
+                {
+                    await _ignoreService.AppendToVisitedAsync(IgnoreList[0].Id, urlvisit);
+                }
+
+                Console.WriteLine("InsertIgnore succeeded.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("InsertIgnore failed. Error: " + ex.Message);
+            }
         }
 
         public async Task InsertUrl(List<DictUrl> child, string startlink, Dictionary<string, int> father1)
@@ -41,29 +101,35 @@ namespace upserver
                 await _urlsService.CreateAsync(newUrls);
                 Console.WriteLine("InsertUrl succeeded for: " + startlink); //
             }
-            catch (Exception ex) // 
+            catch (Exception ex)
             {
-                Console.WriteLine("InsertUrl failed for: " + startlink + ". Error: " + ex.Message); // Failure message
+                Console.WriteLine("InsertUrl failed for: " + startlink + ". Error: " + ex.Message);
+            }
+        }
+
+        public async Task upfutherUrl(string id, string link1)
+        {
+            var tempdict = new Dictionary<string, int>();
+            var hash = await _urlsService.GeturlAsync(id);
+            Console.WriteLine(8888);
+
+            if (true)
+            {
+                Console.WriteLine("dsds66666666d");
+                tempdict = hash.Father;
+                tempdict[link1] = 1;
+                await _urlsService.UpdateFieldAsync(id, "Father", tempdict);
             }
         }
 
 
-
-        public async Task upfutherUrl(string id, string link1)
+        public async Task upfutherUrl1(Dictionary<string,int> tempdict,string id)
         {
-            //Console.WriteLine(id);
-            var tempdict = new Dictionary<string, int>();
+          
 
-            var hash = await _urlsService.GeturlAsync(id);
-            Console.WriteLine(8888);
-
-            if (1==1){
-                Console.WriteLine("dsds66666666d");
-                tempdict = hash.Father;
-                tempdict[link1]=1;
-            await _urlsService.UpdateFieldAsync(id,"Father",tempdict);
-           }
-
+           
+                await _urlsService.UpdateFieldAsync(id, "Father", tempdict);
+            
         }
 
         public async Task<List<BaseUrl>> GetBaseUrls()
@@ -96,7 +162,6 @@ namespace upserver
             }
         }
 
-
         public async Task InsertWord(DictWord child, string startlink)
         {
             var word = new Words
@@ -108,14 +173,11 @@ namespace upserver
             await _wordsService.CreateAsync(word);
         }
 
-
-
         public async Task<bool> UrlExistsAsync(string url)
         {
             var urlRecord = await _urlsService.GeturlAsync(url);
             return urlRecord != null;
         }
-
 
         public async Task updateword(string id, DictWord newDictItem)
         {
@@ -123,6 +185,13 @@ namespace upserver
             var update = Builders<Words>.Update.Push(x => x.Dict, newDictItem);
             await _wordsService.UpdateOneAsync(filter, update);
         }
+
+
+        public async Task<List<Urls>> getallurl()
+        {
+           return await _urlsService.GetAsync();
+        }
+
 
         public async Task DeleteUrlsWhereFatherIsNullAsync()
         {
@@ -137,10 +206,34 @@ namespace upserver
             }
         }
 
-
         public async Task<List<BaseUrl>> GetBaseUrl()
         {
             return await _baseUrlService.GetAsync();
         }
+
+        public async Task UpdateAsync1(string url)
+        {
+            try
+            {
+                Console.WriteLine("UpdateAsync1");
+                var baseUrl = await _baseUrlService.GetAsync();
+                Console.WriteLine($"{baseUrl[0].Id}");  
+                var new_baseurl = new BaseUrl
+                {
+                    Id = baseUrl[0].Id,
+                    Name = baseUrl[0].Name,
+                    Time = baseUrl[0].Time,
+                    Url = url
+                };
+                await _baseUrlService.UpdateAsync(baseUrl[0].Id, new_baseurl);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+                // Handle the exception or rethrow to let a higher-level handler deal with it
+                throw;
+            }
+        }
+
     }
 }

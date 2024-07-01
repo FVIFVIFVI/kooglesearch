@@ -74,17 +74,28 @@ namespace UrlsApi.Services
 
             await _urlsCollection.UpdateOneAsync(filter, update);
         }
-          
 
 
-          public async Task UpdateRankAsync(string id, double newRank)
+
+        public async Task UpdateRankAsync(string id, double newRank)
         {
-            var filter = Builders<Urls>.Filter.Eq(x => x.Id, id);
-            var update = Builders<Urls>.Update.Set(x => x.Rank, newRank);
+            try
+            {
+                var filter = Builders<Urls>.Filter.Eq(x => x.Id, id);
+                var update = Builders<Urls>.Update.Set(x => x.Rank, newRank);
 
-            await _urlsCollection.UpdateOneAsync(filter, update);
+                await _urlsCollection.UpdateOneAsync(filter, update);
+            }
+            catch (Exception ex)
+            {
+                // Log the exception or handle it as needed
+                Console.WriteLine($"An error occurred while updating the rank: {ex.Message}");
+                // Optionally, rethrow the exception or handle it according to your application's requirements
+                throw;
+            }
         }
-       
+
+
         public async Task RemoveAsync(string id) =>
             await _urlsCollection.DeleteOneAsync(x => x.Id == id);
 

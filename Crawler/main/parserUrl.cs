@@ -44,8 +44,9 @@ namespace parserUrl
                     string link = CombineLink(prefix, href);
                     //Console.WriteLine(link);
                     if (link != "" && Uri.IsWellFormedUriString(link, UriKind.Absolute)) {
+                        Console.WriteLine(link+"link");    
                         links.Enqueue(link);
-                        
+                        Console.WriteLine(links.Peek());
 
                         var existingDict = resultDict.FirstOrDefault(dict => string.Equals(dict.Url, link, StringComparison.OrdinalIgnoreCase));
                         if (existingDict != null) {

@@ -7,11 +7,13 @@ using KoogleDatabaseSettingsApi.Models;
 using Microsoft.Extensions.Options;
 using urlsApi.Models;
 using wordsApi.Models;
-
+using ignore.Models;
+using pageRank;
 namespace CrawlerManager;
 
 class Crawler
 {
+    private PageRank pageRank1;
     private Queue<string> links;
     private HashSet<string> visitedLinks;
     private HashSet<string> indata;
@@ -19,7 +21,7 @@ class Crawler
     private ParserUrl PUrl;
     private Upserver Up;
     private ParserWords PWord;
-
+    private Ignore ignore;
     public Crawler(IOptions<KoogleDatabaseSettings> databaseSettings)
     {
         links = new();
@@ -29,6 +31,9 @@ class Crawler
         PUrl = new();
         Up = new(databaseSettings);
         PWord = new();
+        ignore = new();
+        pageRank1 = new(databaseSettings);
+
     }
 
     public async void crawler(string Url)
@@ -41,12 +46,14 @@ class Crawler
         //{
         //    indata.Add(urlData.Name);
         //}
-
+        await Up.UpdateAsync1(Url);
         int count = 0;
         int errors = 0;
         int visit = 0;
         int lin = 0;
-
+        Console.WriteLine("urueu");
+        var ignore1=  Up.Ignore_get();
+        foreach (var item in ignore1) { visitedLinks.Add(item); }
         while (links.Count > 0)
         {
             ++count;
@@ -81,9 +88,15 @@ class Crawler
                     ++errors;
                 }
                 visitedLinks.Add(link);
+                await Up.InsertIgnore(link);
+                Up.UpdateAsync1(links.Peek());
+
+
             }
             else
-            {
+            {   Console.WriteLine(links.Peek());
+                links.Dequeue();
+                Console.WriteLine("y7yughjvjfytt6itgugvyg");
                 visit++;
             }
         }

@@ -5,22 +5,42 @@ const SearchWord = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [serverResponse, setServerResponse] = useState([]);
 
-    const handleInputChange = async (event) => {
+    const handleInputChange = (event) => {
         const inputValue = event.target.value;
         setSearchTerm(inputValue);
+    };
 
-        // Make a GET request to the server to check if the word exists
+    const apisearch = async () => {
         try {
-            const response = await fetch(`http://localhost:5015/Words/${inputValue}`);
+            const response = await fetch(`http://localhost:5015/Words/${searchTerm}`);
             const data = await response.json();
             console.log(data);
             setServerResponse(data);
-
         } catch (error) {
             console.error('Error checking word existence:', error);
             setServerResponse(['Error checking word existence']);
         }
     };
+
+    const handleAddUrl = async () => {
+        try {
+            const response = await fetch(`https://localhost:7122/api/Home`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            if (response.ok) {
+                console.log('AddUrl request successful');
+                // Optionally, you can update the UI or state here
+            } else {
+                console.error('Error with AddUrl request', response.status, response.statusText);
+            }
+        } catch (error) {
+            console.error('Error calling AddUrl:', error);
+        }
+    };
+    
 
     const wordToDisplay = 'koogle';
 
@@ -30,9 +50,9 @@ const SearchWord = () => {
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&display=swap" />
                 <Styles.koogleText>
                     {wordToDisplay.split('').map((letter, index) => (
-                    <Styles.ColorfulLetter key={index} index={index}>
-                    {letter}
-                    </Styles.ColorfulLetter>
+                        <Styles.ColorfulLetter key={index} index={index}>
+                            {letter}
+                        </Styles.ColorfulLetter>
                     ))}
                 </Styles.koogleText>
                 <Styles.InputAndButtonWarper>
@@ -42,7 +62,7 @@ const SearchWord = () => {
                         value={searchTerm}
                         onChange={handleInputChange}
                     />
-                    <Styles.SearchButton>
+                    <Styles.SearchButton onClick={apisearch}>
                         <Styles.SearchIcon src='/mingcute_search-fill.svg'/>
                     </Styles.SearchButton>
                 </Styles.InputAndButtonWarper>
@@ -56,9 +76,9 @@ const SearchWord = () => {
                     ))}
                 </ul>
             </Styles.Warper>
-            <Styles.SettingsButton>
-                <Styles.SetingsIcon src='/Vector.svg' alt="SearchIcon"/>
-            </Styles.SettingsButton> 
+            <Styles.SettingsButton onClick={handleAddUrl}>
+                <Styles.SetingsIcon src='/Vector.svg' alt="SettingsIcon"/>
+            </Styles.SettingsButton>
         </Styles.Div>
     );
 }

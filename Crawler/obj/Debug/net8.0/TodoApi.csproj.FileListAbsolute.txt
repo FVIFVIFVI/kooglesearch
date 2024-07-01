@@ -108,3 +108,113 @@ E:\koogel\koogle\Crawler\obj\Debug\net8.0\refint\TodoApi.dll
 E:\koogel\koogle\Crawler\obj\Debug\net8.0\TodoApi.pdb
 E:\koogel\koogle\Crawler\obj\Debug\net8.0\TodoApi.genruntimeconfig.cache
 E:\koogel\koogle\Crawler\obj\Debug\net8.0\ref\TodoApi.dll
+E:\koogel\kooglesearch\Crawler\bin\Debug\net8.0\appsettings.Development.json
+E:\koogel\kooglesearch\Crawler\bin\Debug\net8.0\appsettings.json
+E:\koogel\kooglesearch\Crawler\bin\Debug\net8.0\selenium-manager\linux\selenium-manager
+E:\koogel\kooglesearch\Crawler\bin\Debug\net8.0\selenium-manager\macos\selenium-manager
+E:\koogel\kooglesearch\Crawler\bin\Debug\net8.0\selenium-manager\windows\selenium-manager.exe
+E:\koogel\kooglesearch\Crawler\bin\Debug\net8.0\TodoApi.exe
+E:\koogel\kooglesearch\Crawler\bin\Debug\net8.0\TodoApi.deps.json
+E:\koogel\kooglesearch\Crawler\bin\Debug\net8.0\TodoApi.runtimeconfig.json
+E:\koogel\kooglesearch\Crawler\bin\Debug\net8.0\TodoApi.dll
+E:\koogel\kooglesearch\Crawler\bin\Debug\net8.0\TodoApi.pdb
+E:\koogel\kooglesearch\Crawler\bin\Debug\net8.0\AWSSDK.Core.dll
+E:\koogel\kooglesearch\Crawler\bin\Debug\net8.0\AWSSDK.SecurityToken.dll
+E:\koogel\kooglesearch\Crawler\bin\Debug\net8.0\DnsClient.dll
+E:\koogel\kooglesearch\Crawler\bin\Debug\net8.0\HtmlAgilityPack.dll
+E:\koogel\kooglesearch\Crawler\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+E:\koogel\kooglesearch\Crawler\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+E:\koogel\kooglesearch\Crawler\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.InMemory.dll
+E:\koogel\kooglesearch\Crawler\bin\Debug\net8.0\Microsoft.OpenApi.dll
+E:\koogel\kooglesearch\Crawler\bin\Debug\net8.0\MongoDB.Bson.dll
+E:\koogel\kooglesearch\Crawler\bin\Debug\net8.0\MongoDB.Driver.dll
+E:\koogel\kooglesearch\Crawler\bin\Debug\net8.0\MongoDB.Driver.Core.dll
+E:\koogel\kooglesearch\Crawler\bin\Debug\net8.0\MongoDB.Libmongocrypt.dll
+E:\koogel\kooglesearch\Crawler\bin\Debug\net8.0\Newtonsoft.Json.dll
+E:\koogel\kooglesearch\Crawler\bin\Debug\net8.0\WebDriver.dll
+E:\koogel\kooglesearch\Crawler\bin\Debug\net8.0\SharpCompress.dll
+E:\koogel\kooglesearch\Crawler\bin\Debug\net8.0\Snappier.dll
+E:\koogel\kooglesearch\Crawler\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+E:\koogel\kooglesearch\Crawler\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\koogel\kooglesearch\Crawler\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\koogel\kooglesearch\Crawler\bin\Debug\net8.0\ZstdSharp.dll
+E:\koogel\kooglesearch\Crawler\bin\Debug\net8.0\runtimes\linux\native\libmongocrypt.so
+E:\koogel\kooglesearch\Crawler\bin\Debug\net8.0\runtimes\osx\native\libmongocrypt.dylib
+E:\koogel\kooglesearch\Crawler\bin\Debug\net8.0\runtimes\win\native\mongocrypt.dll
+E:\koogel\kooglesearch\Crawler\obj\Debug\net8.0\TodoApi.csproj.AssemblyReference.cache
+E:\koogel\kooglesearch\Crawler\obj\Debug\net8.0\TodoApi.GeneratedMSBuildEditorConfig.editorconfig
+E:\koogel\kooglesearch\Crawler\obj\Debug\net8.0\TodoApi.AssemblyInfoInputs.cache
+E:\koogel\kooglesearch\Crawler\obj\Debug\net8.0\TodoApi.AssemblyInfo.cs
+E:\koogel\kooglesearch\Crawler\obj\Debug\net8.0\TodoApi.csproj.CoreCompileInputs.cache
+E:\koogel\kooglesearch\Crawler\obj\Debug\net8.0\TodoApi.MvcApplicationPartsAssemblyInfo.cs
+E:\koogel\kooglesearch\Crawler\obj\Debug\net8.0\TodoApi.MvcApplicationPartsAssemblyInfo.cache
+E:\koogel\kooglesearch\Crawler\obj\Debug\net8.0\TodoApi.sourcelink.json
+E:\koogel\kooglesearch\Crawler\obj\Debug\net8.0\staticwebassets.build.json
+E:\koogel\kooglesearch\Crawler\obj\Debug\net8.0\staticwebassets.development.json
+E:\koogel\kooglesearch\Crawler\obj\Debug\net8.0\staticwebassets\msbuild.TodoApi.Microsoft.AspNetCore.StaticWebAssets.props
+E:\koogel\kooglesearch\Crawler\obj\Debug\net8.0\staticwebassets\msbuild.build.TodoApi.props
+E:\koogel\kooglesearch\Crawler\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.TodoApi.props
+E:\koogel\kooglesearch\Crawler\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.TodoApi.props
+E:\koogel\kooglesearch\Crawler\obj\Debug\net8.0\staticwebassets.pack.json
+E:\koogel\kooglesearch\Crawler\obj\Debug\net8.0\scopedcss\bundle\TodoApi.styles.css
+E:\koogel\kooglesearch\Crawler\obj\Debug\net8.0\TodoApi.csproj.Up2Date
+E:\koogel\kooglesearch\Crawler\obj\Debug\net8.0\TodoApi.dll
+E:\koogel\kooglesearch\Crawler\obj\Debug\net8.0\refint\TodoApi.dll
+E:\koogel\kooglesearch\Crawler\obj\Debug\net8.0\TodoApi.pdb
+E:\koogel\kooglesearch\Crawler\obj\Debug\net8.0\TodoApi.genruntimeconfig.cache
+E:\koogel\kooglesearch\Crawler\obj\Debug\net8.0\ref\TodoApi.dll
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\bin\Debug\net8.0\selenium-manager\linux\selenium-manager
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\bin\Debug\net8.0\selenium-manager\macos\selenium-manager
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\bin\Debug\net8.0\selenium-manager\windows\selenium-manager.exe
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\bin\Debug\net8.0\appsettings.json
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\bin\Debug\net8.0\TodoApi.exe
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\bin\Debug\net8.0\TodoApi.deps.json
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\bin\Debug\net8.0\TodoApi.runtimeconfig.json
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\bin\Debug\net8.0\TodoApi.dll
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\bin\Debug\net8.0\TodoApi.pdb
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\bin\Debug\net8.0\AWSSDK.Core.dll
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\bin\Debug\net8.0\AWSSDK.SecurityToken.dll
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\bin\Debug\net8.0\DnsClient.dll
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\bin\Debug\net8.0\HtmlAgilityPack.dll
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\bin\Debug\net8.0\MongoDB.Bson.dll
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\bin\Debug\net8.0\MongoDB.Driver.dll
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\bin\Debug\net8.0\MongoDB.Driver.Core.dll
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\bin\Debug\net8.0\MongoDB.Libmongocrypt.dll
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\bin\Debug\net8.0\WebDriver.dll
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\bin\Debug\net8.0\SharpCompress.dll
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\bin\Debug\net8.0\Snappier.dll
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\bin\Debug\net8.0\ZstdSharp.dll
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\bin\Debug\net8.0\runtimes\linux\native\libmongocrypt.so
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\bin\Debug\net8.0\runtimes\osx\native\libmongocrypt.dylib
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\bin\Debug\net8.0\runtimes\win\native\mongocrypt.dll
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\obj\Debug\net8.0\TodoApi.csproj.AssemblyReference.cache
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\obj\Debug\net8.0\TodoApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\obj\Debug\net8.0\TodoApi.AssemblyInfoInputs.cache
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\obj\Debug\net8.0\TodoApi.AssemblyInfo.cs
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\obj\Debug\net8.0\TodoApi.csproj.CoreCompileInputs.cache
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\obj\Debug\net8.0\TodoApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\obj\Debug\net8.0\TodoApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\obj\Debug\net8.0\TodoApi.sourcelink.json
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\obj\Debug\net8.0\staticwebassets\msbuild.TodoApi.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\obj\Debug\net8.0\staticwebassets\msbuild.build.TodoApi.props
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.TodoApi.props
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.TodoApi.props
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\obj\Debug\net8.0\scopedcss\bundle\TodoApi.styles.css
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\obj\Debug\net8.0\TodoApi.csproj.CopyComplete
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\obj\Debug\net8.0\TodoApi.dll
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\obj\Debug\net8.0\refint\TodoApi.dll
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\obj\Debug\net8.0\TodoApi.pdb
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\obj\Debug\net8.0\TodoApi.genruntimeconfig.cache
+C:\Users\gdkub\OneDrive\שולחן העבודה\‏‏תיקיה חדשה\kooglesearch\Crawler\obj\Debug\net8.0\ref\TodoApi.dll

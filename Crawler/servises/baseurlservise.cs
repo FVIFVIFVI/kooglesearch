@@ -31,8 +31,20 @@ namespace BaseUrlApi.Services
         public async Task CreateAsync(BaseUrl newBaseUrl) =>
             await _baseUrlCollection.InsertOneAsync(newBaseUrl);
 
-        public async Task UpdateAsync(string id, BaseUrl updatedBaseUrl) =>
-            await _baseUrlCollection.ReplaceOneAsync(x => x.Id == id, updatedBaseUrl);
+        public async Task UpdateAsync(string id, BaseUrl updatedBaseUrl)
+        {
+            try
+            {
+                Console.WriteLine("45hj44");
+                await _baseUrlCollection.ReplaceOneAsync(x => x.Id == id, updatedBaseUrl);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred while updating: {ex.Message}");
+                // Handle the exception or rethrow to let a higher-level handler deal with it
+                throw;
+            }
+        }
 
         public async Task RemoveAsync(string id) =>
             await _baseUrlCollection.DeleteOneAsync(x => x.Id == id);
