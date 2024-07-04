@@ -19,7 +19,7 @@ export const Warper = styled.div`
   margin-bottom: 15%;
 `;
 
-export const koogleText = styled.text`
+export const koogleText = styled.div`
   font-family: "Josefin Sans";
   font-size: 1000%;
   font-style: normal;
@@ -102,4 +102,30 @@ export const StyledListItem = styled.li`
   list-style: none;
   width: 100%;
   text-align: center;
+`;
+
+export const Popup = styled.div`
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+`;
+
+export const PopupButton = styled.button`
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  width: 100%;
+  background: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background: #0056b3;
+  }
 `;

@@ -5,12 +5,13 @@ using UrlsApi.Services;
 using UsersApi.Services;
 using WordsApi.Services;
 using playCrawler;
+using HomeController;
+
 using upserver; // הוסף את ה-namespace של Upserver
 using pageRank; // הוסף את ה-namespace של PageRank
 using Microsoft.Extensions.Options;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Configure services
@@ -24,6 +25,7 @@ builder.Services.AddSingleton<WordsService>();
 builder.Services.AddSingleton<PlayCrawler>();
 builder.Services.AddSingleton<Upserver>(); // הוסף את השורה הזו
 builder.Services.AddSingleton<PageRank>(); // הוסף את השורה הזו
+builder.Services.AddSingleton<HomeController1>();
 
 builder.Services.AddControllers()
     .AddJsonOptions(options => options.JsonSerializerOptions.PropertyNamingPolicy = null);
@@ -35,7 +37,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: MyAllowSpecificOrigins,
                       policy =>
                       {
-                          policy.WithOrigins("http://localhost:5016", "http://localhost:3000") // Allow access from both 5016 and 3000
+                          policy.WithOrigins("http://localhost:5016", "http://localhost:3000", "http://localhost:7122") // Allow access from both 5016 and 3000
                                 .AllowAnyMethod()
                                 .AllowAnyHeader();
                       });

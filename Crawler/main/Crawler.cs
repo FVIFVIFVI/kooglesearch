@@ -9,6 +9,8 @@ using urlsApi.Models;
 using wordsApi.Models;
 using ignore.Models;
 using pageRank;
+using System.Runtime.ExceptionServices;
+
 namespace CrawlerManager;
 
 class Crawler
@@ -22,6 +24,8 @@ class Crawler
     private Upserver Up;
     private ParserWords PWord;
     private Ignore ignore;
+    bool first = true;
+
     public Crawler(IOptions<KoogleDatabaseSettings> databaseSettings)
     {
         links = new();
@@ -33,27 +37,30 @@ class Crawler
         PWord = new();
         ignore = new();
         pageRank1 = new(databaseSettings);
+        
+    }
 
+    public List<DictUrl> parserurl1(string link, string prefix)
+    {
+        string htmlContent = Html.getHtmlFromUrl(link);
+        Console.WriteLine(22);
+        List<DictUrl> urls = PUrl.getUrls(htmlContent, prefix, links);
+        return urls;
     }
 
     public async void crawler(string Url)
     {
         string prefix = SubString.SubStr(Url, '/', 0, 3);
-
         links.Enqueue(Url);
-        //var UrlList = await Up.GetUrls();
-        //foreach (var urlData in UrlList)
-        //{
-        //    indata.Add(urlData.Name);
-        //}
         await Up.UpdateAsync1(Url);
         int count = 0;
         int errors = 0;
         int visit = 0;
         int lin = 0;
         Console.WriteLine("urueu");
-        var ignore1=  Up.Ignore_get();
+        var ignore1 = Up.Ignore_get();
         foreach (var item in ignore1) { visitedLinks.Add(item); }
+
         while (links.Count > 0)
         {
             ++count;
@@ -63,14 +70,11 @@ class Crawler
             {
                 try
                 {
-                    string htmlContent = Html.getHtmlFromUrl(link);
-                    Console.WriteLine(22 );
-                    List<DictUrl> urls = PUrl.getUrls(htmlContent, prefix, links);
+                    List<DictUrl> urls = parserurl1(link, prefix);
                     Console.WriteLine(23);
                     if (!indata.Contains(link))
                     {
                         Console.WriteLine(24);
-                        //await Up.InsertUrl(urls, link);
                         Dictionary<string, int> words = PWord.getWords(link);
                         foreach (var word in words)
                         {
@@ -78,28 +82,25 @@ class Crawler
                             await Up.InsertOrUpdateWord(dWord, word.Key);
                         }
                     }
-                    //Console.WriteLine(link);
                     lin++;
                 }
                 catch (Exception ex)
                 {
-                    //Console.WriteLine($"Error: {ex.Message}");
-                    
                     ++errors;
                 }
                 visitedLinks.Add(link);
                 await Up.InsertIgnore(link);
                 Up.UpdateAsync1(links.Peek());
-
-
             }
             else
-            {   Console.WriteLine(links.Peek());
+            {   if (!first) { return; }
+                parserurl1(link, prefix);
+                Console.WriteLine(links.Peek());
                 links.Dequeue();
                 Console.WriteLine("y7yughjvjfytt6itgugvyg");
+                first= false;
                 visit++;
             }
         }
-        //Console.WriteLine($"errors:{errors}, visit:{visit}, link:{lin}");
     }
 }

@@ -8,34 +8,43 @@ using downloadHtml;
 using parserUrl;
 using Substring;
 using pageRank;
-using Amazon.Runtime.Internal.Endpoints.StandardLibrary;
+using Newtonsoft.Json.Linq;
+using playCrawler;
+using UrlsApi.Services;
+using KoogleDatabaseSettingsApi.Models;
+using Microsoft.Extensions.Options;
+using System.Threading;
 
-namespace TodoApi.main
+namespace HomeController
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class HomeController : ControllerBase
+    public class HomeController1 : ControllerBase
     {
         private readonly Upserver _upServer;
         private readonly Dictionary<string, Dictionary<string, int>> _father2;
         private readonly Ignore _ignore;
         private readonly GetHtml _html;
         private readonly ParserUrl _pUrl;
-        private readonly PageRank _pageRank; // Add PageRank as a dependency
+        private readonly PageRank _pageRank;
+        private readonly PlayCrawler _playCrawler;
+        private static SemaphoreSlim _semaphore = new SemaphoreSlim(1, 1); // Semaphore for mutual exclusion
 
-        public HomeController(Upserver upServer, PageRank pageRank)
+        public HomeController1(Upserver upServer, PageRank pageRank, UrlsService urlsService, IOptions<KoogleDatabaseSettings> databaseSettings)
         {
-            _upServer = upServer;
+            _upServer = upServer ?? throw new ArgumentNullException(nameof(upServer));
             _ignore = new Ignore();
             _html = new GetHtml();
             _pUrl = new ParserUrl();
             _father2 = new Dictionary<string, Dictionary<string, int>>();
-            _pageRank = pageRank; // Initialize PageRank
+            _pageRank = pageRank ?? throw new ArgumentNullException(nameof(pageRank));
+            _playCrawler = new PlayCrawler(databaseSettings);
         }
 
         [HttpGet]
         public async Task<IActionResult> Index()
         {
+            await _semaphore.WaitAsync();
             try
             {
                 Console.WriteLine("Index");
@@ -57,7 +66,6 @@ namespace TodoApi.main
                     var tempDict = _father2[fatherKey];
                     await _upServer.upfutherUrl1(tempDict, fatherKey);
                 }
-
                 return Ok();
             }
             catch (Exception ex)
@@ -65,11 +73,14 @@ namespace TodoApi.main
                 Console.WriteLine("An error occurred in Index: " + ex.Message);
                 return StatusCode(500, "Internal server error. Please try again later.");
             }
+            _semaphore.Release();
+
         }
 
         [HttpPost]
         public async Task<IActionResult> AddUrl()
         {
+            await _semaphore.WaitAsync();
             try
             {
                 Console.WriteLine("HttpPost");
@@ -80,7 +91,6 @@ namespace TodoApi.main
                     string htmlContent = _html.getHtmlFromUrl(urlPast);
                     Console.WriteLine(22);
 
-                    // Create a queue with the current URL
                     Queue<string> links = new Queue<string>();
                     links.Enqueue(urlPast);
 
@@ -95,11 +105,9 @@ namespace TodoApi.main
                         _father2[urlPast][links.Dequeue()] = 1;
                     }
 
-                    // Update the InsertUrl call to include all necessary parameters
                     await _upServer.InsertUrl(urls, urlPast, new Dictionary<string, int>());
                 }
 
-                // Correct iteration and updating of further URLs
                 foreach (var element in _father2)
                 {
                     var fatherUrl = element.Key;
@@ -114,9 +122,10 @@ namespace TodoApi.main
                 Console.WriteLine("An error occurred in AddUrl: " + ex.Message);
                 return StatusCode(500, "Internal server error. Please try again later.");
             }
+            finally { _semaphore.Release(); }   
         }
 
-        [HttpPost("calculate-pagerank")] // Define a new route for the Calculate method
+        [HttpPost("calculate-pagerank")]
         public async Task<IActionResult> CalculatePageRank()
         {
             try
@@ -128,6 +137,21 @@ namespace TodoApi.main
             catch (Exception ex)
             {
                 Console.WriteLine("An error occurred in CalculatePageRank: " + ex.Message);
+                return StatusCode(500, "Internal server error. Please try again later.");
+            }
+        }
+
+        [HttpPost("crawler")]
+        public async Task<IActionResult> Crawlerrun()
+        {
+            try
+            {
+                await _playCrawler.plaing();
+                return Ok("Crawler run completed.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occurred in Crawlerrun: " + ex.Message);
                 return StatusCode(500, "Internal server error. Please try again later.");
             }
         }
